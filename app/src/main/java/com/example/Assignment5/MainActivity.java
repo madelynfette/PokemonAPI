@@ -17,7 +17,6 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.androidnetworking.interfaces.ParsedRequestListener;
-import com.google.gson.JsonParser;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     ArrayList<Pokemon> pokelist;
     Button clearButton;
+    Button clearListButton;
     TextView weightTV;
     TextView heightTV;
     TextView basexpTV;
@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
         AndroidNetworking.initialize(getApplicationContext());
         listView.setOnItemClickListener(listListener);
         imageView = findViewById(R.id.imageView);
+        clearListButton = findViewById(R.id.clearall_button);
+        clearListButton.setOnClickListener(clearListListener);
+
 
     }
 
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void onError(ANError error) {
-                            Toast.makeText(getApplicationContext(), "Not working", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Please enter a valid pokemon name or id", Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -168,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(searched.contains("[0-9]+")){
                     int searchedInt = Integer.parseInt(searched);
-                    if(searchedInt < 0 || searchedInt > 1010){
+                    if(searchedInt < 0 || searchedInt >= 1010){
                         valid = false;
                     }}
                 if(!valid){
@@ -210,8 +213,16 @@ public class MainActivity extends AppCompatActivity {
                 moveTV.setText("");
                 abilityTV.setText("");
                 searchInput.setText("");
+                imageView.setImageDrawable(null);
             }
         };
+    View.OnClickListener clearListListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            pokelist.removeAll(pokelist);
+            ((ArrayAdapter<Pokemon>) listView.getAdapter()).notifyDataSetChanged();
+        }
+    };
 
         //creates a pokemon object and adds it to the list
         public void addToList(){
