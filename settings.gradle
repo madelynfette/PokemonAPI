@@ -14,5 +14,5 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "Hw5Template"
+rootProject.name = "Assignment5"
 include ':app'

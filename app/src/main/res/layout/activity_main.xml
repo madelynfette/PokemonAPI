@@ -6,12 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/search_input"
+    <Button
+        android:id="@+id/clear_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="248dp"
+        android:text="Clear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_view" />
+
+    <EditText
+        android:id="@+id/search_input"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,8 +31,8 @@
         android:id="@+id/nameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="446dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="444dp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -92,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="454dp"
+        android:layout_marginTop="444dp"
         app:layout_constraintStart_toEndOf="@+id/number_text"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -100,8 +110,8 @@
         android:id="@+id/weightTV"
         android:layout_width="106dp"
         android:layout_height="17dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="414dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="408dp"
         app:layout_constraintStart_toEndOf="@+id/weight_text"
         app:layout_constraintTop_toBottomOf="@+id/search_button" />
 
@@ -109,8 +119,8 @@
         android:id="@+id/heightTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="539dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="528dp"
         app:layout_constraintStart_toEndOf="@+id/height_text"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -118,8 +128,8 @@
         android:id="@+id/basexpTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="579dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="568dp"
         app:layout_constraintStart_toEndOf="@+id/basexp_text"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -127,8 +137,8 @@
         android:id="@+id/moveTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="623dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="612dp"
         app:layout_constraintStart_toEndOf="@+id/move_text"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -136,8 +146,8 @@
         android:id="@+id/abilityTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="666dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="656dp"
         app:layout_constraintStart_toEndOf="@+id/ability_text"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -145,8 +155,8 @@
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="28dp"
         android:text="Search"
         app:layout_constraintStart_toEndOf="@+id/search_input"
         app:layout_constraintTop_toTopOf="parent" />
@@ -159,5 +169,15 @@
         android:layout_marginTop="22dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_input" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="145dp"
+        android:layout_height="141dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_view"
+        app:srcCompat="@android:drawable/alert_dark_frame" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

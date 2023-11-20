@@ -25,11 +25,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    namespace 'com.example.Assignment5'
 }
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'com.github.amitshekhariitbhu.Fast-Android-Networking:android-networking:v1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
